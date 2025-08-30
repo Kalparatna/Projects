@@ -1,0 +1,58 @@
+# Compiled source files
+*.class
+*.o
+*.so
+*.dll
+*.exe
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Dependency directories
+node_modules/
+client/node_modules
+vendor/
+target/
+build/
+out/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.env
+client/.env
+
+# Java
+*.jar
+*.war
+*.ear
+
+# C#
+bin/
+obj/
+*.pdb
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Other
+*.bak
+*.tmp
+*.swp
+*.lock
+*.orig
