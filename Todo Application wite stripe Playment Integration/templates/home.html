@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">WELCOME TO IOT Station</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+            {% if is_pro %}
+            <div class="text-center mt-4">
+                <h3>You are a Pro user!</h3>
+            </div>
+            {% else %}
+                <div class="text-center mt-4">
+                    <a href="/buy_pro" class="btn btn-success">Buy Pro</a>
+                </div>
+            {% endif %}
+    
+    <!-- To-Do List Section -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Your To-Do List</h2>
+                <form action="/add_todo" method="POST" class="mb-4">
+                    <div class="form-group">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea name="description" class="form-control" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="text" name="time" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add To-Do</button>
+                </form>
+
+                <ul class="list-group">
+                    {% for todo in todos %}
+                    <li class="list-group-item">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- To-Do Content -->
+                            <div>
+                                <h5>{{ todo.title }}</h5>
+                                <p class="mb-1">{{ todo.description }}</p>
+                                <small class="text-muted">{{ todo.time }}</small>
+                            </div>
+                            <!-- Buttons -->
+                            <div>
+                                <a href="/edit_todo/{{ todo.id }}" class="btn btn-sm btn-warning mr-2">Edit</a>
+                                <form action="/delete_todo/{{ todo.id }}" method="POST" style="display: inline;">
+                                    <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

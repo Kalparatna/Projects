@@ -1,0 +1,226 @@
+/* Global Reset and Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #a8c0ff, #3f80d1);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Main Container */
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    backdrop-filter: blur(8px); /* Glass effect */
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    background-color: #34495e;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 1.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.navbar-nav .nav-link {
+    color: white !important;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #f39c12 !important;
+}
+
+/* Heading */
+h1, h2 {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* To-Do List */
+#todo-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#todo-list li {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+#todo-list li:hover {
+    transform: scale(1.05);
+}
+
+#todo-list li button {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#todo-list li button:hover {
+    background-color: #2980b9;
+}
+
+/* Form Styling */
+form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+form .form-label {
+    font-weight: bold;
+    color: #34495e;
+}
+
+form input, form button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    border: 2px solid #ecf0f1;
+    font-size: 1rem;
+    color: #34495e;
+    transition: border 0.3s ease;
+}
+
+form input:focus, form button:focus {
+    border: 2px solid #3498db;
+    outline: none;
+}
+
+/* Submit and Update Buttons */
+form button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #27ae60;
+}
+
+#update-btn {
+    background-color: #f39c12;
+}
+
+#update-btn:hover {
+    background-color: #e67e22;
+}
+
+/* Pro Plan Button */
+#proButton {
+    background-color: #e74c3c;
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#proButton:hover {
+    background-color: #c0392b;
+}
+
+/* Success and Cancel Payment */
+.payment-status {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 12px;
+    margin-top: 30px;
+}
+
+.payment-success {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.payment-cancel {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* Shadow on hover effect for Pro button */
+.payment-status:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 30px;
+        margin-top: 10px;
+    }
+
+    #todo-list li {
+        padding: 15px;
+    }
+
+    form {
+        padding: 25px;
+    }
+
+    form input, form button {
+        font-size: 14px;
+    }
+
+    #proButton, form button {
+        font-size: 14px;
+    }
+}
